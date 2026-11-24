@@ -29,14 +29,14 @@ export default function Footer() {
                 window.location.href = `mailto:${site.email}?subject=${encodeURIComponent("Free consultation request")}&body=${body}`;
               }}
             >
-              <input required value={name} onChange={(e) => setName(e.target.value)} placeholder="Enter your name" className="h-[52px] w-full rounded-[4px] border-y border-white/10 bg-[#2a2a2a] px-4 text-[15px] outline-none placeholder:text-white/40 focus:border-accent" />
-              <input required type="tel" inputMode="tel" pattern="[0-9+\s-]{10,15}" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Phone number" className="h-[52px] w-full rounded-[4px] border-y border-white/10 bg-[#2a2a2a] px-4 text-[15px] outline-none placeholder:text-white/40 focus:border-accent" />
-              <button type="submit" className="flex h-[52px] w-full items-center justify-center gap-2 rounded-[4px] bg-[#f2f2f0] font-medium text-ink transition hover:bg-white">
-                <ArrowIcon className="h-5 w-5 text-accent" /> {discount.cta}
+              <input required value={name} onChange={(e) => setName(e.target.value)} placeholder="Enter your name" className="h-[52px] w-full rounded-[4px] border-y border-white/10 bg-[#262626] px-4 text-[15px] outline-none placeholder:text-white/60 focus:border-accent" />
+              <input required type="tel" inputMode="tel" pattern="[0-9+\s-]{10,15}" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Phone number" className="h-[52px] w-full rounded-[4px] border-y border-white/10 bg-[#262626] px-4 text-[15px] outline-none placeholder:text-white/60 focus:border-accent" />
+              <button type="submit" className="flex h-[52px] w-full items-center justify-center gap-2 rounded-[4px] bg-accent font-medium text-white transition hover:bg-accent-dark">
+                <ArrowIcon className="h-5 w-5" /> {discount.cta}
               </button>
             </form>
           </div>
-          <div className="reveal grid grid-cols-2 gap-x-8 gap-y-12">
+          <div className="reveal grid grid-cols-2 content-start gap-x-8 gap-y-10 lg:pt-4">
             {cols.map((c) => (
               <div key={c.title}>
                 <p className="font-semibold">{c.title}</p>
@@ -48,7 +48,7 @@ export default function Footer() {
             ))}
           </div>
         </div>
-        <p aria-hidden className="wordmark mt-16 select-none text-center text-[22vw] font-bold leading-[0.8] tracking-[-0.06em] lg:text-[230px]">Narroway</p>
+        <p aria-hidden className="wordmark mt-16 select-none pb-6 text-center text-[19vw] font-bold leading-[0.95] tracking-[-0.05em] lg:text-[200px]">Narroway</p>
       </div>
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-[1200px] flex-col gap-2 px-5 py-6 text-[13px] text-white/50 sm:flex-row sm:justify-between sm:px-10">

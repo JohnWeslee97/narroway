@@ -16,7 +16,7 @@ function Intro({ text }: { text: string }) {
 
 function MockOne() {
   return (
-    <div className="relative mx-auto h-40 w-56">
+    <div className="relative mx-auto h-40 w-56 max-w-full">
       <div className="absolute left-0 top-6 h-28 w-40 -rotate-6 rounded-lg bg-[#d6d6d6]" />
       <div className="absolute left-8 top-3 h-28 w-40 -rotate-2 rounded-lg bg-[#c4c4c4]" />
       <div className="absolute left-16 top-0 flex h-28 w-40 rotate-3 items-end rounded-lg bg-accent p-3 shadow-lg">
@@ -40,7 +40,7 @@ function MockTwo() {
     <div className="mx-auto w-[190px] rounded-[10px] bg-accent p-4 shadow-lg">
       <div className="flex items-center gap-2">
         <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/90"><Image src="/logo-mark.png" alt="" width={18} height={13} className="h-3 w-auto" /></span>
-        <p className="text-sm font-semibold text-white">{names[n].slice(0, len)}<span className="caret">|</span></p>
+        <p className="min-w-0 flex-1 truncate text-sm font-semibold text-white" aria-label="Your growth plan"><span aria-hidden>{names[n].slice(0, len)}</span><span aria-hidden className="caret">|</span></p>
       </div>
       <div className="mt-4 space-y-2">
         <div className="shimmer h-2 w-full rounded-full" />
@@ -80,7 +80,7 @@ export default function Process() {
                 <span className="w-fit rounded-full bg-chip px-3 py-1 text-xs">{s.step}</span>
                 <h3 className="mt-5 text-lg font-semibold">{s.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted">{s.body}</p>
-                <div className="mt-auto pt-10"><Mock /></div>
+                <div className="mt-auto flex min-h-[170px] items-center justify-center overflow-hidden pt-10" aria-hidden><Mock /></div>
               </div>
             );
           })}

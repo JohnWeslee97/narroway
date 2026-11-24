@@ -52,14 +52,14 @@ export default function Hero() {
             </div>
           </div>
 
-          <a href="#services" className="reveal group relative hidden aspect-[4/3] w-full max-w-[360px] justify-self-end overflow-hidden rounded-lg shadow-[0_20px_40px_rgba(0,0,0,0.18)] lg:block" aria-label={`${s.name} – ${s.category}`}>
+          <a href="#services" className="reveal group relative aspect-[4/3] w-full justify-self-start overflow-hidden rounded-lg shadow-[0_20px_40px_rgba(0,0,0,0.18)] block sm:max-w-[420px] lg:justify-self-end lg:max-w-[360px]" aria-label={`${s.name} – ${s.category}`}>
             {slides.map((sl, n) => (
               <Image key={sl.name} src={sl.image} alt="" fill sizes="360px" className={`object-cover transition-opacity duration-700 ${n === i ? "opacity-100" : "opacity-0"}`} />
             ))}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-transparent" />
             <div className="absolute inset-x-5 bottom-5 text-white">
               <p className="border-b border-white/40 pb-2 text-[22px] font-bold">{s.name} <span className="text-base font-normal">({s.tag})</span></p>
-              <p className="mt-2 text-white/75">{s.category}</p>
+              <p className="mt-2 text-white/85">{s.category}</p>
             </div>
           </a>
         </div>

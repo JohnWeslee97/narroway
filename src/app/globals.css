@@ -12,8 +12,9 @@
 }
 
 html { scroll-behavior: smooth; }
+html, body { overflow-x: clip; }
 body { background: var(--color-canvas); color: var(--color-ink); letter-spacing: -0.01em; }
-h1, h2, .display { letter-spacing: -0.03em; }
+h1, h2, .display { letter-spacing: -0.03em; text-wrap: balance; }
 
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
 .reveal.is-in { opacity: 1; transform: none; }

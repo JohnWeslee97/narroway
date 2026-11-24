@@ -19,7 +19,7 @@ export default function Sidebar() {
       <aside className="fixed inset-y-0 left-0 z-50 hidden w-20 flex-col items-center justify-between bg-white py-6 lg:flex">
         <div className="flex flex-col items-center">
           <a href="#home" aria-label={`${site.name} home`}>
-            <Image src="/logo-mark.png" alt={site.name} width={40} height={30} className="h-7 w-auto" />
+            <Image src="/logo-mark.png" alt={site.name} width={40} height={30} className="h-auto w-12 object-contain" />
           </a>
           <nav className="mt-14 flex flex-col items-center gap-8">
             {nav.map((n) => {
@@ -58,6 +58,7 @@ export default function Sidebar() {
               {nav.map((n) => (
                 <a key={n.href} href={n.href} onClick={() => setOpen(false)} className="block py-3 text-2xl font-semibold">{n.label}</a>
               ))}
+              <a href="#contact" onClick={() => setOpen(false)} className="mt-4 flex h-12 items-center justify-center rounded-[4px] bg-accent font-medium text-white">Book a consultation</a>
               <div className="mt-4 space-y-1 border-t border-chip pt-4 text-sm text-muted">
                 <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="block py-1">{site.phone}</a>
                 <a href={`mailto:${site.email}`} className="block py-1">{site.email}</a>

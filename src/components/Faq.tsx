@@ -9,7 +9,7 @@ export default function Faq() {
       <div className="mx-auto max-w-[1200px] px-5 sm:px-10">
         <div className="reveal flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <h2 className="text-[40px] font-bold leading-[1.05] sm:text-[64px]">Quick Answers</h2>
-          <p className="text-[15px] text-muted sm:text-right">{faqs.note[0]}<br className="hidden sm:block" /> {faqs.note[1]}</p>
+          <p className="max-w-xs text-[15px] text-muted">{faqs.note[0]} {faqs.note[1]}</p>
         </div>
         <div className="mt-10 h-px w-full bg-[#d6d6d6]" />
         <div className="mt-10 grid items-start gap-x-6 gap-y-4 md:grid-cols-2">
@@ -25,7 +25,7 @@ export default function Faq() {
                   </span>
                 </button>
                 <div className={`grid transition-all duration-300 ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
-                  <div className="overflow-hidden"><p className="px-6 pb-6 text-sm leading-relaxed text-muted">{f.a}</p></div>
+                  <div className="overflow-hidden"><p className="px-6 pb-6 text-[15px] leading-relaxed text-[#5f5f5f]">{f.a}</p></div>
                 </div>
               </div>
             );

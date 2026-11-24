@@ -16,12 +16,12 @@ function Count({ to }: { to: number }) {
       io.disconnect();
       const t0 = performance.now();
       const tick = (t: number) => {
-        const p = Math.min(1, (t - t0) / 1600);
+        const p = Math.min(1, (t - t0) / 2000);
         setN(Math.round(to * (1 - Math.pow(1 - p, 3))));
         if (p < 1) requestAnimationFrame(tick);
       };
       requestAnimationFrame(tick);
-    }, { threshold: 0.5 });
+    }, { threshold: 0.6 });
     io.observe(el);
     return () => io.disconnect();
   }, [to]);
@@ -37,7 +37,7 @@ export default function StatsBand() {
           <p className="border-l-[3px] border-accent pl-4 text-lg font-medium leading-snug sm:text-xl">
             {statsBand.statement[0]}<br className="hidden sm:block" /> {statsBand.statement[1]}
           </p>
-          <span className="shrink-0 text-[13px] text-white/50">{statsBand.label}</span>
+          <span className="shrink-0 text-[13px] text-white/70">{statsBand.label}</span>
         </div>
         <div className="mt-14 grid gap-5 md:grid-cols-3">
           {statsBand.stats.map((s, i) => {
@@ -51,8 +51,8 @@ export default function StatsBand() {
                 <div>
                   <div className="h-px w-full bg-white/20" />
                   <div className="mt-4 flex items-end justify-between gap-4">
-                    <p className={`text-sm ${i === 0 ? "text-white/85" : "text-white/60"}`}>{s.caption}</p>
-                    <Icon className={`h-5 w-5 shrink-0 ${i === 0 ? "text-white/85" : "text-white/50"}`} />
+                    <p className={`text-sm ${i === 0 ? "text-white/90" : "text-white/80"}`}>{s.caption}</p>
+                    <Icon className={`h-5 w-5 shrink-0 ${i === 0 ? "text-white/90" : "text-white/70"}`} />
                   </div>
                 </div>
               </div>
