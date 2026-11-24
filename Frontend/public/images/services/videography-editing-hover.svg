@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
-<defs><linearGradient id="g-videography-editing-hover" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0f2446"/><stop offset="1" stop-color="#1e6fae"/></linearGradient></defs>
-<rect width="800" height="600" fill="url(#g-videography-editing-hover)"/>
-<circle cx="640" cy="90" r="150" fill="#ffffff" fill-opacity="0.12"/>
-<circle cx="120" cy="540" r="110" fill="#ffffff" fill-opacity="0.07"/>
-<g transform="translate(276 176) scale(5)"><rect x="4" y="13" width="28" height="22" rx="3" fill="none" stroke="#e0b04a" stroke-width="2.4"/><path d="M32 21 L44 14 V34 L32 27 Z" fill="#ffffff"/><circle cx="12" cy="20" r="2" fill="#ffffff"/></g>
-</svg>

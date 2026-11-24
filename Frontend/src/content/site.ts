@@ -56,12 +56,12 @@ export type Service = {
 };
 
 export const services: Service[] = [
-  { name: "Digital Marketing", category: "Ads · SEO · Social media", image: "/images/services/digital-marketing.svg", hoverImage: "/images/services/digital-marketing-hover.svg" },
-  { name: "Growth Consulting", tag: "Popular", category: "Business strategy", image: "/images/services/growth-consulting.svg", hoverImage: "/images/services/growth-consulting-hover.svg" },
-  { name: "Website Development", category: "Websites · Web apps", image: "/images/services/website-development.svg", hoverImage: "/images/services/website-development-hover.svg" },
-  { name: "Custom Software", category: "Tools · Automation", image: "/images/services/custom-software.svg", hoverImage: "/images/services/custom-software-hover.svg" },
-  { name: "AI Projects", tag: "New", category: "AI solutions", image: "/images/services/ai-projects.svg", hoverImage: "/images/services/ai-projects-hover.svg" },
-  { name: "Videography & Editing", category: "Shoot · Edit · Post", image: "/images/services/videography-editing.svg", hoverImage: "/images/services/videography-editing-hover.svg" },
+  { name: "Digital Marketing", category: "Ads · SEO · Social media", image: "/images/services/digital-marketing.webp", hoverImage: "/images/services/digital-marketing-hover.webp" },
+  { name: "Growth Consulting", tag: "Popular", category: "Business strategy", image: "/images/services/growth-consulting.webp", hoverImage: "/images/services/growth-consulting-hover.webp" },
+  { name: "Website Development", category: "Websites · Web apps", image: "/images/services/website-development.webp", hoverImage: "/images/services/website-development-hover.webp" },
+  { name: "Custom Software", category: "Tools · Automation", image: "/images/services/custom-software.webp", hoverImage: "/images/services/custom-software-hover.webp" },
+  { name: "AI Projects", tag: "New", category: "AI solutions", image: "/images/services/ai-projects.webp", hoverImage: "/images/services/ai-projects-hover.webp" },
+  { name: "Videography & Editing", category: "Shoot · Edit · Post", image: "/images/services/videography-editing.webp", hoverImage: "/images/services/videography-editing-hover.webp" },
 ];
 
 export const processSection = {
