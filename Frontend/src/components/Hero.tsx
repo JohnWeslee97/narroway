@@ -16,14 +16,15 @@ export default function Hero() {
   return (
     <section id="home" className="relative overflow-hidden bg-[linear-gradient(120deg,#f1f1ef_0%,#f7f7f5_45%,#efefec_100%)]">
       <div className="mx-auto max-w-[1200px] px-5 pb-20 pt-6 sm:px-10 lg:pb-28">
-        <div className="flex items-center justify-between">
-          <span className="inline-flex h-9 items-center gap-2 rounded-lg bg-chip px-4 text-sm text-ink/70">
-            <Image src="/logo-mark.png" alt="" width={20} height={15} className="h-3.5 w-auto" />
-            {hero.pill}
-          </span>
-          <a href="#contact" className="hidden h-11 items-center gap-2 rounded-[5px] bg-accent px-[18px] text-[15px] font-medium text-white transition hover:bg-accent-dark sm:inline-flex">
-            <SparkIcon className="h-4 w-4" /> {hero.topCta}
+        <div className="flex items-center justify-between gap-4">
+          <a href="#home" aria-label={`${site.name} home`} className="hidden lg:block">
+            <Image src="/logo.png" alt={`${site.name} ${site.tagline}`} width={640} height={167} priority className="h-11 w-auto" />
           </a>
+          <div className="flex items-center gap-3">
+            <a href="#contact" className="hidden h-11 items-center gap-2 rounded-[5px] bg-accent px-[18px] text-[15px] font-medium text-white transition hover:bg-accent-dark sm:inline-flex">
+              <SparkIcon className="h-4 w-4" /> Contact us
+            </a>
+          </div>
         </div>
 
         <div className="relative mt-16 grid items-center gap-12 lg:mt-24 lg:grid-cols-[1.45fr_1fr]">

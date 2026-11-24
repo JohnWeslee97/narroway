@@ -1,32 +1,5 @@
-"use client";
-import { useEffect, useRef, useState } from "react";
-import { statsBand } from "@/content/site";
-import { CheckIcon, TrendIcon, UsersIcon } from "./Icons";
-
-const icons = { users: UsersIcon, trend: TrendIcon, check: CheckIcon };
-
-function Count({ to }: { to: number }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const [n, setN] = useState(0);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const io = new IntersectionObserver(([e]) => {
-      if (!e.isIntersecting) return;
-      io.disconnect();
-      const t0 = performance.now();
-      const tick = (t: number) => {
-        const p = Math.min(1, (t - t0) / 2000);
-        setN(Math.round(to * (1 - Math.pow(1 - p, 3))));
-        if (p < 1) requestAnimationFrame(tick);
-      };
-      requestAnimationFrame(tick);
-    }, { threshold: 0.6 });
-    io.observe(el);
-    return () => io.disconnect();
-  }, [to]);
-  return <span ref={ref}>{n}</span>;
-}
+import Image from "next/image";
+import { ngoClients, statsBand } from "@/content/site";
 
 export default function StatsBand() {
   return (
@@ -39,25 +12,23 @@ export default function StatsBand() {
           </p>
           <span className="shrink-0 text-[13px] text-white/70">{statsBand.label}</span>
         </div>
-        <div className="mt-14 grid gap-5 md:grid-cols-3">
-          {statsBand.stats.map((s, i) => {
-            const Icon = icons[s.icon as keyof typeof icons];
-            return (
-              <div key={s.caption} className={`reveal fold relative flex h-[200px] flex-col justify-between p-6 ${i === 0 ? "bg-[#2e7ebb]" : "bg-[#3a3a3a]"}`} style={{ transitionDelay: `${i * 120}ms` }}>
-                <span className={`absolute left-0 top-0 h-7 w-7 ${i === 0 ? "bg-white/90" : "bg-[#5a5a5a]"}`} style={{ clipPath: "polygon(0 100%, 100% 0, 100% 100%)" }} />
-                <p className="text-right text-[44px] font-bold leading-none">
-                  {s.prefix}<Count to={s.value} /><span className={i === 0 ? "" : "text-accent"}>{s.suffix}</span>
-                </p>
+
+        <div className="reveal mt-20">
+          <p className="text-[13px] font-semibold uppercase tracking-[0.2em] text-accent">Trusted NGO partners</p>
+          <div className="mt-6 grid gap-5 md:grid-cols-2">
+            {ngoClients.map((c) => (
+              <div key={c.name} className="flex items-center gap-6 rounded-[10px] bg-white/[0.06] p-6 ring-1 ring-white/10">
+                <div className="flex h-24 w-32 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-black/40 p-2">
+                  <Image src={c.logo} alt={`${c.name} logo`} width={c.logoWidth} height={c.logoHeight} className="max-h-full w-auto object-contain" />
+                </div>
                 <div>
-                  <div className="h-px w-full bg-white/20" />
-                  <div className="mt-4 flex items-end justify-between gap-4">
-                    <p className={`text-sm ${i === 0 ? "text-white/90" : "text-white/80"}`}>{s.caption}</p>
-                    <Icon className={`h-5 w-5 shrink-0 ${i === 0 ? "text-white/90" : "text-white/70"}`} />
-                  </div>
+                  <h3 className="text-[20px] font-bold">{c.name}</h3>
+                  <p className="mt-1 text-[15px] leading-snug text-white/80">{c.tagline}</p>
+                  {c.location && <p className="mt-2 text-[13px] text-white/60">{c.location}</p>}
                 </div>
               </div>
-            );
-          })}
+            ))}
+          </div>
         </div>
       </div>
     </section>

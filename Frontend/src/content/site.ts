@@ -17,8 +17,8 @@ export const site = {
 
 export const nav = [
   { label: "Home", href: "#home", icon: "home" },
+  { label: "About", href: "#about", icon: "user" },
   { label: "Services", href: "#services", icon: "layers" },
-  { label: "About", href: "#process", icon: "user" },
   { label: "Contact", href: "#contact", icon: "chat" },
 ] as const;
 
@@ -51,19 +51,17 @@ export type Service = {
   name: string;
   tag?: "New" | "Popular";
   category: string;
-  price: string;
   image: string;
   hoverImage: string;
 };
 
-// PLACEHOLDER prices
 export const services: Service[] = [
-  { name: "Growth Consulting", tag: "Popular", category: "Business Strategy", price: "From ₹9,999", image: "/images/svc-consulting.webp", hoverImage: "/images/svc-finance.webp" },
-  { name: "Meta Ads", tag: "New", category: "Digital Marketing", price: "From ₹7,999", image: "/images/svc-marketing.webp", hoverImage: "/images/svc-consulting.webp" },
-  { name: "Brand & Web", category: "Branding", price: "From ₹14,999", image: "/images/svc-branding.webp", hoverImage: "/images/svc-marketing.webp" },
-  { name: "GST & Compliance", tag: "Popular", category: "Registration", price: "From ₹1,999", image: "/images/svc-compliance.webp", hoverImage: "/images/svc-finance.webp" },
-  { name: "Accounts", category: "Finance", price: "From ₹4,999", image: "/images/svc-finance.webp", hoverImage: "/images/svc-compliance.webp" },
-  { name: "CSR Partnerships", tag: "New", category: "NGO & Impact", price: "Free consult", image: "/images/svc-csr.webp", hoverImage: "/images/svc-branding.webp" },
+  { name: "Digital Marketing", category: "Ads · SEO · Social media", image: "/images/services/digital-marketing.svg", hoverImage: "/images/services/digital-marketing-hover.svg" },
+  { name: "Growth Consulting", tag: "Popular", category: "Business strategy", image: "/images/services/growth-consulting.svg", hoverImage: "/images/services/growth-consulting-hover.svg" },
+  { name: "Website Development", category: "Websites · Web apps", image: "/images/services/website-development.svg", hoverImage: "/images/services/website-development-hover.svg" },
+  { name: "Custom Software", category: "Tools · Automation", image: "/images/services/custom-software.svg", hoverImage: "/images/services/custom-software-hover.svg" },
+  { name: "AI Projects", tag: "New", category: "AI solutions", image: "/images/services/ai-projects.svg", hoverImage: "/images/services/ai-projects-hover.svg" },
+  { name: "Videography & Editing", category: "Shoot · Edit · Post", image: "/images/services/videography-editing.svg", hoverImage: "/images/services/videography-editing-hover.svg" },
 ];
 
 export const processSection = {
@@ -145,3 +143,22 @@ export const discount = {
   ],
   cta: "Claim your consultation",
 };
+
+// PLACEHOLDER about text: replace with Narroway's real story, team and numbers before launch
+export const aboutUs = {
+  title: "About Us",
+  intro: "Narroway is a business solutions partner for startups, small and medium businesses and NGOs. We bring strategy, marketing, technology and compliance under one roof, so you can focus on running your business.",
+  body: "We started Narroway because growing a business often means juggling five different agencies, each with its own priorities. We work as one focused team instead, with clear plans, honest advice and measurable results.",
+  values: [
+    { title: "One Partner", text: "Strategy, marketing, websites, software and compliance, handled by one team that knows your business." },
+    { title: "Clear Plans", text: "Every engagement starts with a roadmap that sets priorities, timelines and costs before any work begins." },
+    { title: "Honest Results", text: "We report every month in plain language, and we tell you what is working and what is not." },
+  ],
+  cta: { label: "Talk to us", href: "/contact" },
+};
+
+// Shown in the dark band under the stats. Only details we have are listed; add more as they come in.
+export const ngoClients = [
+  { name: "Udavi", tagline: "Development Through Participation", logo: "/images/clients/udavi.png", logoWidth: 1024, logoHeight: 1024 },
+  { name: "MVKS", tagline: "Makkal Vilipunarvu Kalvi Sangam", location: "Srivilliputhur - 626 125", logo: "/images/clients/mvks.png", logoWidth: 1024, logoHeight: 290 },
+];

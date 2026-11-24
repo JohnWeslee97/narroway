@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+<defs><linearGradient id="g-ai-projects-rest" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#16305e"/><stop offset="1" stop-color="#2a7bb8"/></linearGradient></defs>
+<rect width="800" height="600" fill="url(#g-ai-projects-rest)"/>
+<circle cx="640" cy="90" r="150" fill="#e0b04a" fill-opacity="0.12"/>
+<circle cx="120" cy="540" r="110" fill="#ffffff" fill-opacity="0.07"/>
+<g transform="translate(276 176) scale(5)"><rect x="14" y="14" width="20" height="20" rx="3" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="24" cy="24" r="4" fill="#e0b04a"/><path d="M19 14 V7 M24 14 V7 M29 14 V7 M19 34 V41 M24 34 V41 M29 34 V41 M14 19 H7 M14 24 H7 M14 29 H7 M34 19 H41 M34 24 H41 M34 29 H41" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round"/></g>
+</svg>

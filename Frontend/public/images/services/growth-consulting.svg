@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+<defs><linearGradient id="g-growth-consulting-rest" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#16305e"/><stop offset="1" stop-color="#2a7bb8"/></linearGradient></defs>
+<rect width="800" height="600" fill="url(#g-growth-consulting-rest)"/>
+<circle cx="640" cy="90" r="150" fill="#e0b04a" fill-opacity="0.12"/>
+<circle cx="120" cy="540" r="110" fill="#ffffff" fill-opacity="0.07"/>
+<g transform="translate(276 176) scale(5)"><circle cx="24" cy="24" r="18" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="24" cy="24" r="11" fill="none" stroke="#ffffff" stroke-width="2.4"/><circle cx="24" cy="24" r="4" fill="#e0b04a"/><path d="M24 24 L40 8" stroke="#e0b04a" stroke-width="2.6" stroke-linecap="round"/><path d="M31 8 H40 V17" fill="none" stroke="#e0b04a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg>
