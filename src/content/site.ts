@@ -6,145 +6,142 @@ export const site = {
   tagline: "Business Solution",
   email: "narrowayoffice@gmail.com",
   phone: "+91 00000 00000", // PLACEHOLDER
-  location: "Chennai, Tamil Nadu, India", // PLACEHOLDER: confirm address
+  address: "Chennai, Tamil Nadu, India", // PLACEHOLDER: full office address
   socials: {
-    instagram: "https://www.instagram.com/", // PLACEHOLDER
-    linkedin: "https://www.linkedin.com/", // PLACEHOLDER
     x: "https://x.com/", // PLACEHOLDER
+    youtube: "https://www.youtube.com/", // PLACEHOLDER
+    linkedin: "https://www.linkedin.com/", // PLACEHOLDER
+    instagram: "https://www.instagram.com/", // PLACEHOLDER
   },
 };
 
 export const nav = [
-  { label: "Home", href: "#home" },
-  { label: "Services", href: "#services" },
-  { label: "Process", href: "#process" },
-  { label: "Packages", href: "#packages" },
-  { label: "FAQ", href: "#faq" },
-];
+  { label: "Home", href: "#home", icon: "home" },
+  { label: "Services", href: "#services", icon: "layers" },
+  { label: "About", href: "#process", icon: "user" },
+  { label: "Contact", href: "#contact", icon: "chat" },
+] as const;
 
 export const hero = {
-  badge: "Built for growing businesses",
-  title: "The narrow way to a business that grows",
-  subtitle:
-    "Strategy, marketing and operations under one roof, so you can stop juggling vendors and start scaling with focus.",
-  primaryCta: { label: "Book a free consultation", href: "#contact" },
-  secondaryCta: { label: "See how it works", href: "#process" },
-  trustLine: "Trusted by founders, NGOs and local brands",
-  trustInitials: ["AK", "PR", "SM", "JV"],
+  pill: "Trusted Business Partner",
+  topCta: "Book a consultation",
+  titleStart: "Grow A",
+  titleAccent: "Business",
+  titleEnd: "You're Proud Of — Fast",
+  subtitle: "You don't need five different agencies. All you need is ",
+  subtitleBold: "one focused partner.",
+  primary: { label: "View all services", href: "#services" },
+  secondary: { label: "See how it works", href: "#process" },
+  avatars: ["AK", "PR", "SM", "JV"],
+  trust: ["50+ Businesses trust us", "with their growth"], // PLACEHOLDER number
 };
 
-// PLACEHOLDER numbers: replace with real figures
-export const stats = [
-  { value: 50, prefix: "", suffix: "+", label: "Businesses supported" },
-  { value: 3, prefix: "", suffix: "x", label: "Average lead growth for ad clients" },
-  { value: 98, prefix: "", suffix: "%", label: "Clients who stay after month one" },
+export const statsBand = {
+  statement: ["Designed not just to look good, our solutions are built", "to perform where it matters most"],
+  label: "©2024–26",
+  // PLACEHOLDER numbers
+  stats: [
+    { prefix: "+", value: 50, suffix: "", caption: "Businesses supported across India", icon: "users" },
+    { prefix: "₹", value: 2, suffix: "Cr+", caption: "Ad spend managed for clients", icon: "trend" },
+    { prefix: "+", value: 120, suffix: "", caption: "Filings and registrations completed", icon: "check" },
+  ],
+};
+
+export type Service = {
+  name: string;
+  tag?: "New" | "Popular";
+  category: string;
+  price: string;
+  image: string;
+  hoverImage: string;
+};
+
+// PLACEHOLDER prices
+export const services: Service[] = [
+  { name: "Growth Consulting", tag: "Popular", category: "Business Strategy", price: "From ₹9,999", image: "/images/svc-consulting.webp", hoverImage: "/images/svc-finance.webp" },
+  { name: "Meta Ads", tag: "New", category: "Digital Marketing", price: "From ₹7,999", image: "/images/svc-marketing.webp", hoverImage: "/images/svc-consulting.webp" },
+  { name: "Brand & Web", category: "Branding", price: "From ₹14,999", image: "/images/svc-branding.webp", hoverImage: "/images/svc-marketing.webp" },
+  { name: "GST & Compliance", tag: "Popular", category: "Registration", price: "From ₹1,999", image: "/images/svc-compliance.webp", hoverImage: "/images/svc-finance.webp" },
+  { name: "Accounts", category: "Finance", price: "From ₹4,999", image: "/images/svc-finance.webp", hoverImage: "/images/svc-compliance.webp" },
+  { name: "CSR Partnerships", tag: "New", category: "NGO & Impact", price: "Free consult", image: "/images/svc-csr.webp", hoverImage: "/images/svc-branding.webp" },
 ];
 
-export const services = [
-  {
-    title: "Business Consulting",
-    tag: "Popular",
-    description: "Clear plans for pricing, positioning and growth, built around your numbers.",
-    icon: "compass",
-  },
-  {
-    title: "Digital Marketing & Meta Ads",
-    tag: "New",
-    description: "Facebook and Instagram campaigns that turn spend into enquiries you can track.",
-    icon: "megaphone",
-  },
-  {
-    title: "Branding & Websites",
-    tag: "",
-    description: "Logos, brand kits and fast, modern websites that make you look as good as you are.",
-    icon: "spark",
-  },
-  {
-    title: "Registration & Compliance",
-    tag: "",
-    description: "GST, company registration and filings handled on time, every time.",
-    icon: "shield",
-  },
-  {
-    title: "Accounts & Finance",
-    tag: "",
-    description: "Bookkeeping, invoicing and monthly reports so you always know where you stand.",
-    icon: "chart",
-  },
-  {
-    title: "CSR & NGO Partnerships",
-    tag: "",
-    description: "Proposals, impact reports and partner outreach for social-impact programmes.",
-    icon: "hands",
-  },
-];
-
-export const process = {
-  intro:
-    "Working with us is simpler than you think: one conversation, one plan, and a team that executes it with you.",
+export const processSection = {
+  // words wrapped in [] render in the accent colour
+  intro: "Working with us is simpler than you think — just [book] a free call, [plan] the roadmap together, and watch your business [grow].",
   steps: [
-    {
-      step: "Step 1",
-      title: "Discover",
-      description: "A free call to understand your business, your goals and what is holding you back.",
-    },
-    {
-      step: "Step 2",
-      title: "Plan",
-      description: "A focused roadmap with clear priorities, timelines and costs. No fluff.",
-    },
-    {
-      step: "Step 3",
-      title: "Grow",
-      description: "We execute alongside you, report every month and adjust as results come in.",
-    },
+    { step: "Step 1", title: "Book A Free Call", body: "First, tell us about your business, your goals and what is holding you back. It takes 30 minutes." },
+    { step: "Step 2", title: "Get Your Roadmap", body: "Then we build a focused plan with priorities, timelines and costs to match your stage." },
+    { step: "Step 3", title: "Launch & Grow", body: "Finally, we execute alongside you and report every month. No extra hassle, no juggling vendors." },
   ],
 };
 
 // PLACEHOLDER testimonials: replace with real client quotes before launch
-export const testimonials = [
-  { quote: "Narroway gave us a plan we could actually follow. Enquiries doubled in three months.", name: "Client Name", company: "Retail Brand" },
-  { quote: "Our GST and filings used to be a headache. Now we never think about them.", name: "Client Name", company: "Manufacturing Unit" },
-  { quote: "The Meta ads finally make sense. We know exactly what each rupee brings back.", name: "Client Name", company: "Clinic" },
-  { quote: "A new website and brand in two weeks, and it looks world class.", name: "Client Name", company: "Startup" },
-  { quote: "They helped us present our programmes to CSR partners with confidence.", name: "Client Name", company: "NGO" },
-  { quote: "One team for marketing, accounts and strategy. It saves us so much time.", name: "Client Name", company: "Services Firm" },
-];
+export const testimonials = {
+  title: ["Loved By Businesses", "Across India"],
+  intro: ["Hear from founders and teams who used Narroway to", "launch, scale and reach their goals"],
+  rating: "4.9/5 Average Rating",
+  items: [
+    { logo: "RETAILCO", quote: "Clear plans and honest advice helped us launch faster, win more customers and scale with confidence.", name: "Client Name", company: "Retail Brand" },
+    { quote: "Ads live in 2 days...wow", name: "Client Name", company: "Clinic" },
+    { logo: "BUILDWELL", quote: "Our GST and filings used to be a headache. Now everything is on time and we never think about it.", name: "Client Name", company: "Manufacturing Unit" },
+    { quote: "Loved working together.", name: "Client Name", company: "Startup" },
+    { logo: "FRESHKART", quote: "The Meta campaigns finally make sense. We know exactly what each rupee brings back.", name: "Client Name", company: "D2C Store" },
+    { logo: "HOPE TRUST", quote: "They helped us present our programmes to CSR partners with confidence and real impact numbers.", name: "Client Name", company: "NGO" },
+    { quote: "Highly recommended", name: "Client Name", company: "Services Firm" },
+    { logo: "NOVA LABS", quote: "A new brand and website in two weeks. It instantly raised how customers see us.", name: "Client Name", company: "Tech Startup" },
+    { logo: "SRI TEXTILES", quote: "One team for marketing, accounts and strategy saves us hours every single week.", name: "Client Name", company: "Textiles" },
+  ],
+};
 
 // PLACEHOLDER prices
-export const packages = [
-  {
-    name: "Starter",
-    blurb: "For new and small businesses",
-    price: "₹9,999",
-    period: "/ month",
-    highlight: false,
-    features: ["Business health check", "Social media setup", "GST filing support", "Monthly review call"],
-    cta: "Get started",
-  },
-  {
-    name: "Growth",
-    blurb: "For businesses ready to scale",
-    price: "₹24,999",
-    period: "/ month",
-    highlight: true,
-    badge: "Best value",
-    features: [
-      "Everything in Starter",
-      "Meta ads management",
-      "Website and brand refresh",
-      "Accounts and compliance",
-      "Dedicated consultant",
-      "Priority support",
-    ],
-    cta: "Talk to us",
-  },
-];
+export const pricing = {
+  titleStart: "One Partner.",
+  titleAccent: "Complete",
+  titleEnd: "Growth.",
+  sub: "Whether you need one service or the whole engine, we've got you ",
+  subBold: "covered.",
+  plans: [
+    {
+      name: "Single Service",
+      blurb: "Includes any one service",
+      price: "₹9,999",
+      oldPrice: "",
+      best: false,
+      cta: "Choose your service",
+      features: ["Choose any one service", "Monthly progress report", "Email and WhatsApp support"],
+      note: "For startups, shops and solo founders",
+    },
+    {
+      name: "Complete Growth",
+      blurb: "Everything in one package",
+      price: "₹24,999",
+      oldPrice: "₹45,000",
+      best: true,
+      cta: "Book a consultation",
+      features: ["Consulting, marketing and compliance", "Meta ads management", "Brand and website refresh", "Accounts and monthly reports", "Dedicated consultant", "Priority support"],
+      note: "For growing businesses and NGOs",
+    },
+  ],
+};
 
-export const faqs = [
-  { q: "What kind of businesses do you work with?", a: "Startups, small and medium businesses, and NGOs. If you are building something, we can help it grow." },
-  { q: "How soon will I see results?", a: "Compliance and setup work is immediate. Marketing usually shows clear results within 30 to 90 days." },
-  { q: "Can I pick just one service?", a: "Yes. Every service is available on its own, and packages simply bundle them at a better price." },
-  { q: "Do you work outside Chennai?", a: "Yes. Most of our work happens online, so we support clients across India." },
-  { q: "Is the first consultation really free?", a: "Yes. A 30-minute call with no obligation, where you leave with at least one thing to act on." },
-];
+export const faqs = {
+  note: ["Here are a few commonly asked questions,", "answered for you"],
+  items: [
+    { q: "What kind of businesses do you work with?", a: "Startups, small and medium businesses, and NGOs. If you are building something, we can help it grow." },
+    { q: "How soon will I see results?", a: "Compliance and setup work is immediate. Marketing usually shows clear results within 30 to 90 days." },
+    { q: "Can I pick just one service?", a: "Yes. Every service is available on its own, and the Complete Growth package bundles them at a better price." },
+    { q: "Do you work outside Chennai?", a: "Yes. Most of our work happens online, so we support clients across India." },
+    { q: "Is the first consultation really free?", a: "Yes. A 30-minute call with no obligation, and you leave with at least one thing to act on." },
+    { q: "How do payments work?", a: "Simple monthly billing with a GST invoice. You can pause or change your plan any month." },
+  ],
+};
+
+export const discount = {
+  title: ["Get Your Free", "Consultation"],
+  bullets: [
+    { bold: "Free 30-minute", rest: " business health check" },
+    { bold: "", rest: "Receive weekly tips to grow your business" },
+  ],
+  cta: "Claim your consultation",
+};

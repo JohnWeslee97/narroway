@@ -1,27 +1,44 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-navy: #0b1f4d;
-  --color-navy-700: #14306e;
-  --color-gold: #c9a24b;
-  --color-gold-300: #e3c784;
-  --color-cream: #f6f1e8;
-  --color-sand: #ece4d6;
-  --color-ink: #1a1f2e;
-  --font-sans: var(--font-jakarta);
+  --color-canvas: #f1f1ef;
+  --color-card: #fafaf8;
+  --color-chip: #e9e9e7;
+  --color-ink: #101010;
+  --color-muted: #8a8a8a;
+  --color-accent: #2a7bb8;
+  --color-accent-dark: #1e6fae;
+  --font-sans: var(--font-gsans);
 }
 
 html { scroll-behavior: smooth; }
-body { background: var(--color-cream); color: var(--color-ink); }
+body { background: var(--color-canvas); color: var(--color-ink); letter-spacing: -0.01em; }
+h1, h2, .display { letter-spacing: -0.03em; }
 
-@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-.animate-marquee { animation: marquee 40s linear infinite; }
-.animate-marquee:hover { animation-play-state: paused; }
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
+.reveal.is-in { opacity: 1; transform: none; }
 
-@keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
-.animate-rise { animation: rise 0.8s ease-out both; }
+@keyframes shimmer { 0% { background-position: -200px 0; } 100% { background-position: 200px 0; } }
+.shimmer { background: linear-gradient(90deg, rgba(255,255,255,.35) 0, rgba(255,255,255,.9) 50%, rgba(255,255,255,.35) 100%); background-size: 400px 100%; animation: shimmer 1.8s linear infinite; }
+
+@keyframes fly { 0%,40% { transform: translate(0,0) rotate(0); opacity: 1; } 80% { transform: translate(140px,-60px) rotate(-12deg); opacity: 0; } 100% { transform: translate(0,0); opacity: 0; } }
+.fly { animation: fly 3.2s ease-in infinite; }
+
+@keyframes press { 0%,30%,100% { transform: scale(1); } 35% { transform: scale(.92); } 45% { transform: scale(1); } }
+.press { animation: press 3.2s ease-in-out infinite; }
+
+@keyframes blink { 50% { opacity: 0; } }
+.caret { animation: blink 1s step-end infinite; }
+
+.wordmark {
+  background: linear-gradient(180deg, #ffffff 0%, #8a8a8a 45%, rgba(0,0,0,0) 95%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+.fold { clip-path: polygon(28px 0, 100% 0, 100% 100%, 0 100%, 0 28px); }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-marquee, .animate-rise { animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .shimmer, .fly, .press, .caret { animation: none; }
   html { scroll-behavior: auto; }
 }

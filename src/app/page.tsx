@@ -1,29 +1,31 @@
-import Navbar from "@/components/Navbar";
+import Sidebar from "@/components/Sidebar";
 import Hero from "@/components/Hero";
-import Stats from "@/components/Stats";
+import StatsBand from "@/components/StatsBand";
 import Services from "@/components/Services";
 import Process from "@/components/Process";
 import Testimonials from "@/components/Testimonials";
-import Packages from "@/components/Packages";
+import Pricing from "@/components/Pricing";
 import Faq from "@/components/Faq";
-import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import RevealObserver from "@/components/RevealObserver";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
-      <main>
-        <Hero />
-        <Stats />
-        <Services />
-        <Process />
-        <Testimonials />
-        <Packages />
-        <Faq />
-        <Contact />
-      </main>
-      <Footer />
+      <Sidebar />
+      <div className="lg:pl-20">
+        <main>
+          <Hero />
+          <StatsBand />
+          <Services />
+          <Process />
+          <Testimonials />
+          <Pricing />
+          <Faq />
+        </main>
+        <Footer />
+      </div>
+      <RevealObserver />
     </>
   );
 }
