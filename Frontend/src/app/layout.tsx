@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
-import { Google_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const gsans = Google_Sans({ variable: "--font-gsans", subsets: ["latin"], weight: ["400", "500", "600", "700"], adjustFontFallback: false });
+const gsans = localFont({
+  src: "./fonts/google-sans-latin.woff2",
+  variable: "--font-gsans",
+  weight: "400 700",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Narroway | Business Solution",

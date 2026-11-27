@@ -6,11 +6,10 @@ export default function StatsBand() {
     <section className="relative overflow-hidden bg-black py-24 text-white sm:py-32">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_70%_0%,rgba(42,123,184,0.25),transparent_55%),radial-gradient(ellipse_at_10%_100%,rgba(255,255,255,0.06),transparent_50%)]" />
       <div className="relative mx-auto max-w-[1200px] px-5 sm:px-10">
-        <div className="reveal flex items-start justify-between gap-6">
+        <div className="reveal">
           <p className="border-l-[3px] border-accent pl-4 text-lg font-medium leading-snug sm:text-xl">
             {statsBand.statement[0]}<br className="hidden sm:block" /> {statsBand.statement[1]}
           </p>
-          <span className="shrink-0 text-[13px] text-white/70">{statsBand.label}</span>
         </div>
 
         <div className="reveal mt-20">

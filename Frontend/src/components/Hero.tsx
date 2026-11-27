@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { hero, services, site } from "@/content/site";
-import { ArrowIcon, SparkIcon } from "./Icons";
+import { ArrowIcon } from "./Icons";
 
 const slides = services.filter((s) => s.tag);
 
@@ -14,23 +14,27 @@ export default function Hero() {
   }, []);
   const s = slides[i];
   return (
-    <section id="home" className="relative overflow-hidden bg-[linear-gradient(120deg,#f1f1ef_0%,#f7f7f5_45%,#efefec_100%)]">
-      <div className="mx-auto max-w-[1200px] px-5 pb-20 pt-6 sm:px-10 lg:pb-28">
+    <section id="home" className="relative flex min-h-svh flex-col overflow-hidden bg-[linear-gradient(120deg,#f1f1ef_0%,#f7f7f5_45%,#efefec_100%)]">
+      <div className="mx-auto flex w-full max-w-[1200px] flex-1 flex-col px-5 pb-10 pt-6 sm:px-10 lg:pb-12">
         <div className="flex items-center justify-between gap-4">
           <a href="#home" aria-label={`${site.name} home`} className="hidden lg:block">
             <Image src="/logo.png" alt={`${site.name} ${site.tagline}`} width={640} height={167} priority className="h-11 w-auto" />
           </a>
           <div className="flex items-center gap-3">
-            <a href="#contact" className="hidden h-11 items-center gap-2 rounded-[5px] bg-accent px-[18px] text-[15px] font-medium text-white transition hover:bg-accent-dark sm:inline-flex">
-              <SparkIcon className="h-4 w-4" /> Contact us
+            <a href="#contact" className="hidden h-11 items-center rounded-[5px] bg-accent px-[18px] text-[15px] font-medium text-white transition hover:bg-accent-dark sm:inline-flex">
+              Contact us
             </a>
           </div>
         </div>
 
-        <div className="relative mt-16 grid items-center gap-12 lg:mt-24 lg:grid-cols-[1.45fr_1fr]">
+        <div className="relative my-auto grid items-center gap-12 py-8 lg:grid-cols-[1.55fr_1fr] lg:py-10">
           <div className="reveal">
-            <h1 className="text-[42px] font-bold leading-[1.05] sm:text-6xl lg:text-[76px]">
-              {hero.titleStart} <span className="text-accent">{hero.titleAccent}</span> {hero.titleEnd}
+            <h1 className="text-[34px] font-bold leading-[1.08] tracking-[-0.03em] sm:text-[46px] lg:text-[54px]">
+              {hero.titleStart}{" "}
+              <span className="bg-gradient-to-r from-accent to-accent-dark bg-clip-text text-transparent">
+                {hero.titleAccent}
+              </span>{" "}
+              {hero.titleEnd}
             </h1>
             <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-[#6e6e6e]">
               {hero.subtitle}<span className="font-semibold text-ink">{hero.subtitleBold}</span>
@@ -39,15 +43,24 @@ export default function Hero() {
               <a href={hero.primary.href} className="inline-flex h-[52px] items-center gap-2.5 rounded-[4px] bg-accent px-6 font-medium text-white transition hover:bg-accent-dark">
                 <ArrowIcon /> {hero.primary.label}
               </a>
-              <a href={hero.secondary.href} className="inline-flex h-[52px] items-center gap-2.5 rounded-[4px] bg-card px-6 font-medium text-ink transition hover:bg-white">
-                <SparkIcon /> {hero.secondary.label}
+              <a href={hero.secondary.href} className="inline-flex h-[52px] items-center rounded-[4px] bg-card px-6 font-medium text-ink transition hover:bg-white">
+                {hero.secondary.label}
               </a>
             </div>
             <div className="mt-10 flex items-center gap-4">
-              <div className="flex -space-x-4">
-                {hero.avatars.map((a, n) => (
-                  <span key={a} className={`flex h-11 w-11 items-center justify-center rounded-full text-xs font-bold ring-2 ring-white ${["bg-[#1f2937] text-white", "bg-accent text-white", "bg-[#d6d6d6] text-ink", "bg-[#2a2a2a] text-white"][n % 4]}`}>{a}</span>
+              <div className="flex -space-x-3">
+                {hero.avatars.map((a) => (
+                  <span
+                    key={a.name}
+                    title={a.name}
+                    className={`relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-full ring-2 ring-white ${a.bg}`}
+                  >
+                    <Image src={a.logo} alt={a.name} fill sizes="44px" className={a.imgClass} />
+                  </span>
                 ))}
+                <span className="relative flex h-11 w-11 items-center justify-center rounded-full bg-accent text-xs font-bold text-white ring-2 ring-white">
+                  {hero.morePartners}
+                </span>
               </div>
               <p className="text-[15px] leading-snug text-ink/80">{hero.trust[0]}<br />{hero.trust[1]}</p>
             </div>

@@ -5,7 +5,7 @@ import { faqs } from "@/content/site";
 export default function Faq() {
   const [open, setOpen] = useState<number | null>(null);
   return (
-    <section id="faq" className="scroll-mt-16 pb-24 sm:pb-32">
+    <section id="faq" className="scroll-mt-16 py-24 sm:py-32">
       <div className="mx-auto max-w-[1200px] px-5 sm:px-10">
         <div className="reveal flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <h2 className="text-[40px] font-bold leading-[1.05] sm:text-[64px]">Quick Answers</h2>

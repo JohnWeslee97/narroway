@@ -5,7 +5,7 @@ export const site = {
   name: "Narroway",
   tagline: "Business Solution",
   email: "narrowayoffice@gmail.com",
-  phone: "+91 00000 00000", // PLACEHOLDER
+  phone: "+91 73058 31401",
   address: "Chennai, Tamil Nadu, India", // PLACEHOLDER: full office address
   socials: {
     x: "https://x.com/", // PLACEHOLDER
@@ -25,20 +25,23 @@ export const nav = [
 export const hero = {
   pill: "Trusted Business Partner",
   topCta: "Book a consultation",
-  titleStart: "Grow A",
-  titleAccent: "Business",
-  titleEnd: "You're Proud Of — Fast",
+  titleStart: "Transforming",
+  titleAccent: "Businesses",
+  titleEnd: "Through Innovation.",
   subtitle: "You don't need five different agencies. All you need is ",
   subtitleBold: "one focused partner.",
   primary: { label: "View all services", href: "#services" },
   secondary: { label: "See how it works", href: "#process" },
-  avatars: ["AK", "PR", "SM", "JV"],
-  trust: ["50+ Businesses trust us", "with their growth"], // PLACEHOLDER number
+  avatars: [
+    { name: "MVKS", logo: "/images/clients/mvks-mark.png", bg: "bg-[#18181b]", imgClass: "object-contain p-1" },
+    { name: "Udavi", logo: "/images/clients/udavi.png", bg: "bg-[#428bd9]", imgClass: "object-cover" },
+  ],
+  morePartners: "+2",
+  trust: ["4+ partners trust us", "with their growth"],
 };
 
 export const statsBand = {
   statement: ["Designed not just to look good, our solutions are built", "to perform where it matters most"],
-  label: "©2024–26",
   // PLACEHOLDER numbers
   stats: [
     { prefix: "+", value: 50, suffix: "", caption: "Businesses supported across India", icon: "users" },
@@ -144,15 +147,14 @@ export const discount = {
   cta: "Claim your consultation",
 };
 
-// PLACEHOLDER about text: replace with Narroway's real story, team and numbers before launch
 export const aboutUs = {
   title: "About Us",
-  intro: "Narroway is a business solutions partner for startups, small and medium businesses and NGOs. We bring strategy, marketing, technology and compliance under one roof, so you can focus on running your business.",
-  body: "We started Narroway because growing a business often means juggling five different agencies, each with its own priorities. We work as one focused team instead, with clear plans, honest advice and measurable results.",
+  intro: "Narroway serves as a dedicated IT and digital team, primarily for NGOs as well as small businesses. From website creation and maintenance to social media, digital marketing, videography, video editing and content creation, we manage every technical detail for you.",
+  body: "You focus on your mission and daily work while we run your entire technical and digital side—keeping your websites updated, your content consistent and your outreach growing.",
   values: [
-    { title: "One Partner", text: "Strategy, marketing, websites, software and compliance, handled by one team that knows your business." },
-    { title: "Clear Plans", text: "Every engagement starts with a roadmap that sets priorities, timelines and costs before any work begins." },
-    { title: "Honest Results", text: "We report every month in plain language, and we tell you what is working and what is not." },
+    { title: "Web & Tech Maintenance", text: "Website creation, updates, hosting and ongoing technical support—managed by one dedicated IT team." },
+    { title: "Media & Marketing", text: "Social media handling, digital marketing, videography, video editing and content creation under one roof." },
+    { title: "NGOs & Small Businesses", text: "Focused primarily on NGOs and small businesses, with clear plans, steady support and honest results." },
   ],
   cta: { label: "Talk to us", href: "/contact" },
 };
